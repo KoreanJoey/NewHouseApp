@@ -8,11 +8,45 @@
 import SwiftUI
 
 struct PropertyPreviewView: View {
+    
+    let property: Property
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 16.0){
+            ZStack{
+                if let imageName = property.imageNames.first {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(10)
+                }
+            }
+            .padding(6)
+            .background(Color.white)
+            .cornerRadius(10)
+            VStack(alignment: .leading){
+                Text("NEW APARTMENTS")
+                    .font(.caption)
+                    .foregroundStyle(Color.gray)
+                    .bold()
+                Text(property.name)
+                    .font(.title3)
+                    .bold()
+                Text(property.address)
+                HStack{
+                    Spacer()
+                    Image(systemName: "star")
+                }
+                .padding(.horizontal)
+            }
+        }
     }
 }
 
 #Preview {
-    PropertyPreviewView()
+    ZStack {
+        //Color.blue.ignoresSafeArea()
+        PropertyPreviewView(property: PropertiesData.properties.first!)
+    }
 }

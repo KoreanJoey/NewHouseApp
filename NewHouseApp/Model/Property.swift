@@ -12,6 +12,7 @@ struct Property: Identifiable {
     let id = UUID().uuidString
     let name : String
     let coordinate : CLLocationCoordinate2D
+    let address : String
     let description : String
     let imageNames: [String]
 }
