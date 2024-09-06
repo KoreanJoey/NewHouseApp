@@ -26,7 +26,10 @@ struct MapView: View {
                 Text("List")
             }.padding(.horizontal, 80)
             ZStack{
-                Map(position: $cameraPosition)
+                Map(position: $cameraPosition) {
+                    //Annotation
+                    //ForEach
+                }
                 }
         }
         
