@@ -36,6 +36,10 @@ struct MapView: View {
                         }
                     }
                 }
+                VStack{
+                    Spacer()
+                    PropertyPreviewView(property: vm.properties[0])
+                }
             }
         }
         

@@ -41,6 +41,7 @@ struct PropertyPreviewView: View {
                 .padding(.horizontal)
             }
         }
+        .background(Color.white)
     }
 }
 

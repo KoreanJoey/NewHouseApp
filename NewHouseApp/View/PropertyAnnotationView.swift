@@ -9,14 +9,18 @@ import SwiftUI
 
 struct PropertyAnnotationView: View {
     var body: some View {
-        ZStack{
-            Circle()
-                .frame(width: 30)
-                .foregroundStyle(.white)
-            Circle()
-                .frame(width: 23)
-                .foregroundStyle(.red)
-        }
+        Button(action: {
+            
+        }, label: {
+            ZStack{
+                Circle()
+                    .frame(width: 30)
+                    .foregroundStyle(.white)
+                Circle()
+                    .frame(width: 23)
+                    .foregroundStyle(.red)
+            }
+        })
     }
 }
 
