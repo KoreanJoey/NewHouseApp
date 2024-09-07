@@ -27,10 +27,16 @@ struct MapView: View {
             }.padding(.horizontal, 80)
             ZStack{
                 Map(position: $cameraPosition) {
-                    //Annotation
-                    //ForEach
+                    ForEach(vm.properties) {
+                        property in
+                        Annotation("", coordinate: property.coordinate) {
+                            VStack {
+                                PropertyAnnotationView()
+                            }
+                        }
+                    }
                 }
-                }
+            }
         }
         
     }

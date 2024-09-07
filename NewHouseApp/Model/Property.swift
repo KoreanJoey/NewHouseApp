@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 
 struct Property: Identifiable {
-    let id = UUID().uuidString
+    let id = UUID()
     let name : String
     let coordinate : CLLocationCoordinate2D
     let address : String

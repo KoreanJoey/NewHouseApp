@@ -19,6 +19,7 @@
 		541749C52C8B2C310012B26C /* PropertyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541749C42C8B2C310012B26C /* PropertyViewModel.swift */; };
 		541749C72C8B386E0012B26C /* PropertyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541749C62C8B386E0012B26C /* PropertyDetailView.swift */; };
 		541749C92C8B38B20012B26C /* PropertyPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541749C82C8B38B20012B26C /* PropertyPreviewView.swift */; };
+		54C6A76B2C8C44ED0021B83F /* PropertyAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6A76A2C8C44ED0021B83F /* PropertyAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		541749C42C8B2C310012B26C /* PropertyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewModel.swift; sourceTree = "<group>"; };
 		541749C62C8B386E0012B26C /* PropertyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailView.swift; sourceTree = "<group>"; };
 		541749C82C8B38B20012B26C /* PropertyPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyPreviewView.swift; sourceTree = "<group>"; };
+		54C6A76A2C8C44ED0021B83F /* PropertyAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				541749A92C8B0EF80012B26C /* ContentView.swift */,
 				541749BE2C8B20780012B26C /* MapView.swift */,
 				541749C62C8B386E0012B26C /* PropertyDetailView.swift */,
+				54C6A76A2C8C44ED0021B83F /* PropertyAnnotationView.swift */,
 				541749C82C8B38B20012B26C /* PropertyPreviewView.swift */,
 				541749C02C8B23EF0012B26C /* AgentView.swift */,
 				541749C22C8B24090012B26C /* ProfileView.swift */,
@@ -195,6 +198,7 @@
 			files = (
 				541749B92C8B12940012B26C /* Property.swift in Sources */,
 				541749AA2C8B0EF80012B26C /* ContentView.swift in Sources */,
+				54C6A76B2C8C44ED0021B83F /* PropertyAnnotationView.swift in Sources */,
 				541749C92C8B38B20012B26C /* PropertyPreviewView.swift in Sources */,
 				541749C12C8B23EF0012B26C /* AgentView.swift in Sources */,
 				541749C52C8B2C310012B26C /* PropertyViewModel.swift in Sources */,
