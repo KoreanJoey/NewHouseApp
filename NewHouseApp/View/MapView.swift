@@ -17,6 +17,7 @@ struct MapView: View {
             span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         )
     )
+    @State private var showingDetail = false
     
     var body: some View {
         VStack{
@@ -44,21 +45,24 @@ struct MapView: View {
                     Spacer()
                     if vm.seeingProperty{
                         PropertyPreviewView(property: vm.currentProperty)
+                            .onTapGesture {
+                                showingDetail = true
+                            }
                             .gesture(
-                            DragGesture()
-                                .onEnded{gesture in
-                                    if gesture.translation.height > 20 {
-                                        withAnimation{
-                                            vm.seeingProperty = false
-                                        }
-                                    }})
-                   }
-                            
-                    
+                                DragGesture()
+                                    .onEnded{gesture in
+                                        if gesture.translation.height > 20 {
+                                            withAnimation{
+                                                vm.seeingProperty = false
+                                            }
+                                        }})
+                    }
                 }
             }
         }
-        
+        .sheet(isPresented: $showingDetail) {
+            PropertyDetailView(property: vm.currentProperty)
+        }
     }
 }
 
@@ -66,4 +70,4 @@ struct MapView: View {
     MapView()
         .environmentObject(PropertyViewModel())
 }
-    
+
