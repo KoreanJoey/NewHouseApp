@@ -32,13 +32,29 @@ struct MapView: View {
                         Annotation("", coordinate: property.coordinate) {
                             VStack {
                                 PropertyAnnotationView()
+                                    .shadow(radius: 3)
+                                    .onTapGesture {
+                                        vm.chooseProperty(property: property)
+                                    }
                             }
                         }
                     }
                 }
                 VStack{
                     Spacer()
-                    PropertyPreviewView(property: vm.properties[0])
+                    if vm.seeingProperty{
+                        PropertyPreviewView(property: vm.currentProperty)
+                            .gesture(
+                            DragGesture()
+                                .onEnded{gesture in
+                                    if gesture.translation.height > 20 {
+                                        withAnimation{
+                                            vm.seeingProperty = false
+                                        }
+                                    }})
+                   }
+                            
+                    
                 }
             }
         }
@@ -50,3 +66,4 @@ struct MapView: View {
     MapView()
         .environmentObject(PropertyViewModel())
 }
+    

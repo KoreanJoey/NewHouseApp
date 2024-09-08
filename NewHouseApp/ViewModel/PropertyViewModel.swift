@@ -15,27 +15,20 @@ class PropertyViewModel: ObservableObject {
     // Current property on map
     @Published var currentProperty: Property{
         didSet {
-            updatePropertyRegion(property: currentProperty)
+            seeingProperty = true
         }
     }
-    
-    
-    @Published var propertyRegion: MKCoordinateRegion = MKCoordinateRegion()
-    let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    @Published var seeingProperty:Bool = false
     
     init() {
         let properties = PropertiesData.properties
         self.properties = properties
         self.currentProperty = properties.first!
         
-        self.updatePropertyRegion(property: properties.first!)
     }
     
-    private func updatePropertyRegion(property: Property) {
-        withAnimation(.easeInOut) {
-            propertyRegion = MKCoordinateRegion(
-                center: property.coordinate, span: mapSpan)
-        }
+    func chooseProperty(property: Property) {
+        currentProperty = property
     }
     
 }

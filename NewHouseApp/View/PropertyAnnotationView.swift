@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct PropertyAnnotationView: View {
+    
+    @EnvironmentObject private var vm: PropertyViewModel
+    
     var body: some View {
-        Button(action: {
-            
-        }, label: {
+
             ZStack{
                 Circle()
                     .frame(width: 30)
@@ -20,8 +21,7 @@ struct PropertyAnnotationView: View {
                     .frame(width: 23)
                     .foregroundStyle(.red)
             }
-        })
-    }
+        }
 }
 
 #Preview {
