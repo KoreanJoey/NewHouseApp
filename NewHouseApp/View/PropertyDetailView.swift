@@ -39,7 +39,7 @@ struct PropertyDetailView: View {
                 Spacer()
                 HStack{
                     
-                    Image(systemName: "star")
+                    Image(systemName: property.isSaved ? "star.fill" : "star")
                     Image(systemName: "square.and.arrow.up")
                 }
                 //.background(Color.blue)

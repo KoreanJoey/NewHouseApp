@@ -15,11 +15,11 @@ struct ContentView: View {
                     Image(systemName:"map")
                     Text("Map")
                 }
-            AgentView()
-                .tabItem {
-                    Image(systemName:"person")
-                    Text("Agent")
-                }
+//            AgentView()
+//                .tabItem {
+//                    Image(systemName:"person")
+//                    Text("Agent")
+//                }
             ProfileView()
                 .tabItem {
                     Image(systemName:"star.circle")

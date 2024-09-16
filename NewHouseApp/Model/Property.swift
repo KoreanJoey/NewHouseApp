@@ -15,6 +15,7 @@ struct Property: Identifiable, Equatable {
     let address : String
     let description : String
     let imageNames: [String]
+    var isSaved: Bool = false
     
     
     //Identifiable
@@ -26,4 +27,5 @@ struct Property: Identifiable, Equatable {
     static func == (lhs: Property, rhs: Property) -> Bool {
         lhs.id == rhs.id
     }
+    
 }

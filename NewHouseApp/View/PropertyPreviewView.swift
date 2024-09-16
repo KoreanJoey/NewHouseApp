@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PropertyPreviewView: View {
     
-    let property: Property
+    @State var property: Property
+    @EnvironmentObject private var vm: PropertyViewModel
     
     var body: some View {
         HStack(spacing: 16.0){
@@ -36,7 +37,11 @@ struct PropertyPreviewView: View {
                 Text(property.address)
                 HStack{
                     Spacer()
-                    Image(systemName: "star")
+                    Image(systemName: property.isSaved ? "star.fill" : "star")
+                        .font(.title3)
+                        .onTapGesture {
+                           vm.toggleSaved(property: property)
+                        }
                 }
                 .padding(.horizontal)
             }
@@ -47,7 +52,7 @@ struct PropertyPreviewView: View {
 
 #Preview {
     ZStack {
-        //Color.blue.ignoresSafeArea()
         PropertyPreviewView(property: PropertiesData.properties.first!)
+            .environmentObject(PropertyViewModel())
     }
 }
