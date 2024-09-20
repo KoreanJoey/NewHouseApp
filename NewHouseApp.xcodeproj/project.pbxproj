@@ -19,6 +19,7 @@
 		541749C72C8B386E0012B26C /* PropertyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541749C62C8B386E0012B26C /* PropertyDetailView.swift */; };
 		541749C92C8B38B20012B26C /* PropertyPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541749C82C8B38B20012B26C /* PropertyPreviewView.swift */; };
 		5442B6A42C8D95F0002A959E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541749BE2C8B20780012B26C /* MapView.swift */; };
+		54AE6D862C9D5D5700F4C245 /* MenuBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE6D852C9D5D5700F4C245 /* MenuBox.swift */; };
 		54C6A76B2C8C44ED0021B83F /* PropertyAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6A76A2C8C44ED0021B83F /* PropertyAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		541749C42C8B2C310012B26C /* PropertyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewModel.swift; sourceTree = "<group>"; };
 		541749C62C8B386E0012B26C /* PropertyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertyDetailView.swift; path = NewHouseApp/View/PropertyDetailView.swift; sourceTree = SOURCE_ROOT; };
 		541749C82C8B38B20012B26C /* PropertyPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyPreviewView.swift; sourceTree = "<group>"; };
+		54AE6D852C9D5D5700F4C245 /* MenuBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBox.swift; sourceTree = "<group>"; };
 		54C6A76A2C8C44ED0021B83F /* PropertyAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,12 +103,12 @@
 			children = (
 				541749A92C8B0EF80012B26C /* ContentView.swift */,
 				541749BE2C8B20780012B26C /* MapView.swift */,
+				54AE6D852C9D5D5700F4C245 /* MenuBox.swift */,
 				541749C62C8B386E0012B26C /* PropertyDetailView.swift */,
 				54C6A76A2C8C44ED0021B83F /* PropertyAnnotationView.swift */,
 				541749C82C8B38B20012B26C /* PropertyPreviewView.swift */,
 				541749C02C8B23EF0012B26C /* AgentView.swift */,
 				541749C22C8B24090012B26C /* ProfileView.swift */,
-				5442B6A22C8D94F7002A959E /* PropertyViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,13 +127,6 @@
 				541749BB2C8B12D40012B26C /* PropertiesData.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		5442B6A22C8D94F7002A959E /* PropertyViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PropertyViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +209,7 @@
 				541749BC2C8B12D40012B26C /* PropertiesData.swift in Sources */,
 				541749C72C8B386E0012B26C /* PropertyDetailView.swift in Sources */,
 				541749C32C8B24090012B26C /* ProfileView.swift in Sources */,
+				54AE6D862C9D5D5700F4C245 /* MenuBox.swift in Sources */,
 				541749A82C8B0EF80012B26C /* NewHouseAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

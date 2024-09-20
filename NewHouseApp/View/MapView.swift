@@ -41,6 +41,14 @@ struct MapView: View {
                         }
                     }
                 }
+                HStack{ //Property, Metro, School choice boxes
+                    Spacer()
+                    VStack{
+                        MenuView()
+                            .padding()
+                        Spacer()
+                    }
+                }
                 VStack{
                     Spacer()
                     if vm.seeingProperty{
