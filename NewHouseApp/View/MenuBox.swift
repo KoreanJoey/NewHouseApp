@@ -10,6 +10,8 @@ import SwiftUI
 struct MenuBox: View {
     let label: String
     let iconName: String
+    let isSelected: Bool
+    let selectedColor: Color
     
     var body: some View {
         VStack(spacing:0){
@@ -22,19 +24,26 @@ struct MenuBox: View {
                 .padding(0)
         }
         .frame(width: 60, height: 60)
-        .background(.white)
+        .background(isSelected ? selectedColor : .white)
         .border(Color.gray, width: 0.5)
     }
 }
 
 struct MenuView: View{
+    
+    @EnvironmentObject private var vm: PropertyViewModel
+    
+    
     var body: some View {
         VStack(spacing:0) {
-            MenuBox(label: "Property", iconName: "house")
+            MenuBox(label: "Property", iconName: "house", isSelected: vm.showingPropertyAnnotation, selectedColor: Color(red: 238/255, green: 108/255, blue: 157/255))
                 .padding(.vertical)
-            MenuBox(label: "Metro", iconName: "tram")
-            MenuBox(label: "School", iconName: "book")
-            MenuBox(label: "Develop", iconName: "lightbulb.max")
+                .onTapGesture {
+                    vm.showingPropertyAnnotation.toggle()
+                }
+//            MenuBox(label: "Metro", iconName: "tram")
+//            MenuBox(label: "School", iconName: "book")
+//            MenuBox(label: "Develop", iconName: "lightbulb.max")
         }
     }
 }
@@ -43,4 +52,5 @@ struct MenuView: View{
 #Preview {
     //MenuBox(label: "star", iconName: "star")
     MenuView()
+        .environmentObject(PropertyViewModel())
 }

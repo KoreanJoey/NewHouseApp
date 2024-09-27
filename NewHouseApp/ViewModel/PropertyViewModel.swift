@@ -18,8 +18,8 @@ class PropertyViewModel: ObservableObject {
             seeingProperty = true
         }
     }
-    @Published var seeingProperty:Bool = false
-    
+    @Published var seeingProperty: Bool = false
+    @Published var showingPropertyAnnotation: Bool = true
     
     
     init() {

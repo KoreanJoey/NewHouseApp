@@ -19,6 +19,7 @@ struct MapView: View {
     )
     @State private var showingDetail = false
     
+    
     var body: some View {
         VStack{
             HStack{
@@ -31,12 +32,14 @@ struct MapView: View {
                     ForEach(vm.properties) {
                         property in
                         Annotation("", coordinate: property.coordinate) {
-                            VStack {
+                            VStack { if vm.showingPropertyAnnotation {
                                 PropertyAnnotationView()
                                     .shadow(radius: 3)
                                     .onTapGesture {
                                         vm.chooseProperty(property: property)
                                     }
+                            }
+                                
                             }
                         }
                     }
