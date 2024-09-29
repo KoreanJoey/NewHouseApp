@@ -24,6 +24,7 @@ struct MenuBox: View {
                 .padding(0)
         }
         .frame(width: 60, height: 60)
+        .foregroundStyle(isSelected ? .white : .black)
         .background(isSelected ? selectedColor : .white)
         .border(Color.gray, width: 0.5)
     }
