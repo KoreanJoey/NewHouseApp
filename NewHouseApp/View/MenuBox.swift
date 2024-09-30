@@ -16,7 +16,7 @@ struct MenuBox: View {
     var body: some View {
         VStack(spacing:0){
             Image(systemName: iconName)
-                //.resizable()
+            //.resizable()
                 .frame(width: 20, height: 20)
                 .padding(0)
             Text(label)
@@ -42,9 +42,50 @@ struct MenuView: View{
                 .onTapGesture {
                     vm.showingPropertyAnnotation.toggle()
                 }
-//            MenuBox(label: "Metro", iconName: "tram")
-//            MenuBox(label: "School", iconName: "book")
-//            MenuBox(label: "Develop", iconName: "lightbulb.max")
+            MenuBox(label: "Metro", iconName: "tram", isSelected: vm.showingMetroAnnotation, selectedColor: Color(red: 135/255, green: 206/255, blue: 235/255))
+                .onTapGesture {
+                    toggleMetro()
+                }
+            MenuBox(label: "School", iconName: "book", isSelected: vm.showingSchoolAnnotation, selectedColor: Color(red: 186/255, green: 104/255, blue: 200/255))
+                .onTapGesture {
+                    toggleSchool()
+                }
+            MenuBox(label: "Develop", iconName: "lightbulb.max", isSelected: vm.showingDevelopAnnotation, selectedColor: Color(red: 255/255, green: 159/255, blue: 64/255))
+                .onTapGesture {
+                    toggleDevelop()
+                }
+        }
+    }
+    
+    
+    // Menu Toggle Functions
+    private func toggleMetro() {
+        if vm.showingMetroAnnotation {
+            vm.showingMetroAnnotation = false
+        } else {
+            vm.showingMetroAnnotation = true
+            vm.showingSchoolAnnotation = false
+            vm.showingDevelopAnnotation = false
+        }
+    }
+    
+    private func toggleSchool() {
+        if vm.showingSchoolAnnotation {
+            vm.showingSchoolAnnotation = false
+        } else {
+            vm.showingSchoolAnnotation = true
+            vm.showingMetroAnnotation = false
+            vm.showingDevelopAnnotation = false
+        }
+    }
+    
+    private func toggleDevelop() {
+        if vm.showingDevelopAnnotation {
+            vm.showingDevelopAnnotation = false
+        } else {
+            vm.showingDevelopAnnotation = true
+            vm.showingMetroAnnotation = false
+            vm.showingSchoolAnnotation = false
         }
     }
 }
