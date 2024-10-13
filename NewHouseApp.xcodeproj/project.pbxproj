@@ -27,6 +27,8 @@
 		541FA5262CBB5EEC00E4B957 /* AgentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FA5252CBB5EEC00E4B957 /* AgentViewModel.swift */; };
 		541FA5282CBB5F0700E4B957 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FA5272CBB5F0700E4B957 /* Agent.swift */; };
 		541FA52C2CBB730300E4B957 /* AddAgentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FA52B2CBB730300E4B957 /* AddAgentView.swift */; };
+		541FA52E2CBBD96B00E4B957 /* schools.json in Resources */ = {isa = PBXBuildFile; fileRef = 541FA52D2CBBD96B00E4B957 /* schools.json */; };
+		541FA5302CBBDA9C00E4B957 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FA52F2CBBDA9C00E4B957 /* School.swift */; };
 		5442B6A42C8D95F0002A959E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541749BE2C8B20780012B26C /* MapView.swift */; };
 		54AE6D862C9D5D5700F4C245 /* MenuBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE6D852C9D5D5700F4C245 /* MenuBox.swift */; };
 		54C6A76B2C8C44ED0021B83F /* PropertyAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6A76A2C8C44ED0021B83F /* PropertyAnnotationView.swift */; };
@@ -49,6 +51,8 @@
 		541FA5252CBB5EEC00E4B957 /* AgentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentViewModel.swift; sourceTree = "<group>"; };
 		541FA5272CBB5F0700E4B957 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		541FA52B2CBB730300E4B957 /* AddAgentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAgentView.swift; sourceTree = "<group>"; };
+		541FA52D2CBBD96B00E4B957 /* schools.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schools.json; sourceTree = "<group>"; };
+		541FA52F2CBBDA9C00E4B957 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		54AE6D852C9D5D5700F4C245 /* MenuBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBox.swift; sourceTree = "<group>"; };
 		54C6A76A2C8C44ED0021B83F /* PropertyAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +117,7 @@
 			children = (
 				541749B82C8B12940012B26C /* Property.swift */,
 				541FA5272CBB5F0700E4B957 /* Agent.swift */,
+				541FA52F2CBBDA9C00E4B957 /* School.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				541749BB2C8B12D40012B26C /* PropertiesData.swift */,
+				541FA52D2CBBD96B00E4B957 /* schools.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541FA52E2CBBD96B00E4B957 /* schools.json in Resources */,
 				541749AF2C8B0EF90012B26C /* Preview Assets.xcassets in Resources */,
 				541749AC2C8B0EF90012B26C /* Assets.xcassets in Resources */,
 			);
@@ -238,6 +245,7 @@
 				541749C32C8B24090012B26C /* ProfileView.swift in Sources */,
 				54AE6D862C9D5D5700F4C245 /* MenuBox.swift in Sources */,
 				541749A82C8B0EF80012B26C /* NewHouseAppApp.swift in Sources */,
+				541FA5302CBBDA9C00E4B957 /* School.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

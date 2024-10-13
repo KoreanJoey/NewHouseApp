@@ -8,40 +8,58 @@
 import SwiftUI
 
 struct AddAgentView: View {
-    @Environment(\.presentationMode) var presentationMode
     @State private var name: String = ""
     @State private var rating: Double = 0.0
     @State private var company: String = ""
     @State private var description: String = ""
     @ObservedObject var viewModel: AgentViewModel
+    @Environment(\.dismiss) var dismiss
+    @State private var showSuccessMessage = false
     
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("Agent Information")) {
-                    TextField("Name", text: $name)
-                    TextField("Company", text: $company)
-                    TextField("Description", text: $description)
+            if showSuccessMessage {
+                VStack {
+                    Text("Successfully Added Agent!")
+                        .font(.largeTitle)
+                        .foregroundColor(Color(red: 238/255, green: 108/255, blue: 157/255))
+                        .transition(.opacity)
                 }
-                
-                if !viewModel.errorMessage.isEmpty {
-                    Text(viewModel.errorMessage)
-                        .foregroundColor(.red)
-                }
-                
-                Button(action: {
-                    viewModel.addAgent(name: name, rating: rating, company: company, description: description) { success in
-                        if success {
-                            presentationMode.wrappedValue.dismiss()
-                        }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        dismiss()
+                        
                     }
-                }) {
-                    Text("Add Agent")
-                        .frame(maxWidth: .infinity)
                 }
-                .disabled(name.isEmpty || company.isEmpty || description.isEmpty)
+            } else {
+                Form {
+                    Section(header: Text("Agent Information")) {
+                        TextField("Name", text: $name)
+                        TextField("Company", text: $company)
+                        TextField("Description", text: $description)
+                    }
+                    
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(.red)
+                    }
+                    
+                    Button(action: {
+                        viewModel.addAgent(name: name, company: company, description: description) { success in
+                            if success {
+                                withAnimation {
+                                    showSuccessMessage = true
+                                }
+                            }
+                        }
+                    }) {
+                        Text("Add Agent")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .disabled(name.isEmpty || company.isEmpty || description.isEmpty)
+                }
+                .navigationTitle("Add New Agent")
             }
-            .navigationTitle("Add New Agent")
         }
     }
 }

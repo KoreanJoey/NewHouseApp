@@ -30,7 +30,17 @@ struct AgentView: View {
                 }
                 .padding(.vertical, 8)
             }
+            .listStyle(PlainListStyle())
             .navigationTitle("Agents")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: AddAgentView(viewModel: viewModel)) {
+                        Image(systemName: "plus.circle")
+                            .font(.title2)
+                            .foregroundStyle(Color(red: 238/255, green: 108/255, blue: 157/255))
+                    }
+                }
+            }
             .onAppear {
                 Task {
                     await viewModel.fetchAgents()

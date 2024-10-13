@@ -23,9 +23,10 @@ struct MapView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Map")
-                Spacer()
-                Text("List")
+//                Text("Map")
+//                Spacer()
+//                Text("List")
+                Text("")
             }.padding(.horizontal, 80)
             ZStack{
                 Map(position: $cameraPosition) {
@@ -41,6 +42,23 @@ struct MapView: View {
                             }
                                 
                             }
+                        }
+                    }
+                    ForEach(vm.schools) { school in
+                        if vm.showingSchoolAnnotation { Annotation(school.School_name, coordinate: school.coordinate) {
+                            VStack {
+                                Image(systemName: "book")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .background(Color(red: 255/255, green: 159/255, blue: 64/255))
+                                    .clipShape(Circle())
+                                    .shadow(radius: 3)
+                                    
+                                Text(school.School_name)
+                                    .font(.caption)
+                                
+                            }
+                        }
                         }
                     }
                 }
@@ -69,6 +87,9 @@ struct MapView: View {
                                         }})
                     }
                 }
+            }
+            .onAppear{
+                vm.loadSchools()
             }
         }
         .sheet(isPresented: $showingDetail) {

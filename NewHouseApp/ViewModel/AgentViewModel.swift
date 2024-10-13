@@ -36,7 +36,7 @@ class AgentViewModel: ObservableObject {
         }
     }
     
-    func addAgent(name: String, rating: Double, company: String, description: String, completion: @escaping (Bool) -> Void) {
+    func addAgent(name: String, company: String, description: String, completion: @escaping (Bool) -> Void) {
         guard !name.isEmpty, !company.isEmpty, !description.isEmpty else {
             errorMessage = "All fields must be filled."
             completion(false)

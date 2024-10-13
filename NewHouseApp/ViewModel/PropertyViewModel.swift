@@ -23,6 +23,7 @@ class PropertyViewModel: ObservableObject {
     @Published var showingMetroAnnotation: Bool = false
     @Published var showingSchoolAnnotation: Bool = false
     @Published var showingDevelopAnnotation: Bool = false
+    @Published var schools: [School] = []
     
     
     init() {
@@ -71,4 +72,19 @@ class PropertyViewModel: ObservableObject {
             properties = properties
         }
     }
+    
+    func loadSchools() {
+            guard let url = Bundle.main.url(forResource: "schools", withExtension: "json") else {
+                print("JSON file not found")
+                return
+            }
+            
+            do {
+                let data = try Data(contentsOf: url)
+                let decodedData = try JSONDecoder().decode([School].self, from: data)
+                schools = decodedData
+            } catch {
+                print("Error decoding JSON: \(error)")
+            }
+        }
 }
