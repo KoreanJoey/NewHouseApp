@@ -8,8 +8,10 @@
 import Foundation
 import Supabase
 
+
 class AgentViewModel: ObservableObject {
     @Published var agents: [Agent] = []
+    @Published var errorMessage: String = ""
     
     let client = SupabaseClient(
         supabaseURL: URL(string: "https://qqejfyhvcjwgsobrexwx.supabase.co")!,
@@ -33,6 +35,40 @@ class AgentViewModel: ObservableObject {
             debugPrint("Error fetching agents: \(error)")
         }
     }
+    
+    func addAgent(name: String, rating: Double, company: String, description: String, completion: @escaping (Bool) -> Void) {
+        guard !name.isEmpty, !company.isEmpty, !description.isEmpty else {
+            errorMessage = "All fields must be filled."
+            completion(false)
+            return
+        }
+        
+        let newAgent = Agent(id: 0, name: name, rating: 0.0, company: company, description: description)
+        
+        Task {
+            do {
+                let _ = try await client
+                    .from("agents")
+                    .insert([
+                        "name": newAgent.name,
+                        "company": newAgent.company,
+                        "description": newAgent.description
+                    ])
+                    .execute()
+                
+                DispatchQueue.main.async {
+                    self.errorMessage = ""
+                    completion(true)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.errorMessage = "Failed to add agent: \(error.localizedDescription)"
+                    completion(false)
+                }
+            }
+        }
+    }
+    
 }
 
 
