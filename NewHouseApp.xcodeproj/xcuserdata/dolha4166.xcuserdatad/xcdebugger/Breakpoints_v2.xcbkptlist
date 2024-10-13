@@ -36,12 +36,12 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "E725B837-39FF-418F-AD66-1A68FE5548E5 - a576c12edea2638c"
+                  uuid = "E725B837-39FF-418F-AD66-1A68FE5548E5 - 1c37ee8882a3210b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "NewHouseApp.PropertyViewModel.deinit"
-                  moduleName = "NewHouseApp"
+                  moduleName = "NewHouseApp.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dolha4166/Documents/GitHub/NewHouseApp/NewHouseApp/ViewModel/PropertyViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
@@ -50,12 +50,12 @@
                   endingLineNumber = "0">
                </Location>
                <Location
-                  uuid = "E725B837-39FF-418F-AD66-1A68FE5548E5 - c9e4c995e27e98d1"
+                  uuid = "E725B837-39FF-418F-AD66-1A68FE5548E5 - 70a5e633be7fda56"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "NewHouseApp.PropertyViewModel.__deallocating_deinit"
-                  moduleName = "NewHouseApp"
+                  moduleName = "NewHouseApp.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dolha4166/Documents/GitHub/NewHouseApp/NewHouseApp/ViewModel/PropertyViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
